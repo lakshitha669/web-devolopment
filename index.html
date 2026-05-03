@@ -1,44 +1,255 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
-       <title>css selectors</title>
-    <style>
-        body{background-image:url(1567759.jpg);}
-        #a1{color: aquamarine;}
-        #a2{color: rgb(238, 52, 5);}
-
-        .x1{font: size 200px;
-        color: blue;}
-        .x2{font-style: italic;}
-        
-        h5,h6{color: tomato;
-        font: weight 500px;;
-    font-style: italic;
-}
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gaming PC components guide — GPUs, CPUs, memory, cooling, and more." />
+  <title>PixelForge — Gaming PC Components</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Oxanium:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <dl>
-        <dt>id selector(#)</dt>    
+  <a class="skip-link" href="#main">Skip to content</a>
 
-   <dd> <p id="a1"> selector</p></dd>
-    <dd><h2 id="a2"> css</h2></dd>
-    </dl>
-    <dl>
-        <dt>class selector(.)</dt>
+  <!-- Section 1: Site navigation -->
+  <header class="site-header" id="top">
+    <div class="header-inner container">
+      <a class="logo" href="#top">
+        <span class="logo-mark" aria-hidden="true"></span>
+        PixelForge
+      </a>
 
-    <dd><h3 class="x1">webb design</h3></dd>
-    <dd><h4 class="x2">web devoloper</h4></dd>
-    </dl>
-    <dl>
-        <dt><b>group selector</b></dt>
-       
-   <dd> <h5>majistrate</h5></dd>
-    <dd><h6>former judge</h6></dd>
-    </dl>
-    <p style="color: antiquewhite; font-size: large;">anuradhapura</p>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
 
+      <nav class="site-nav" id="site-nav">
+        <ul class="nav-list">
+          <li class="nav-item-plain"><a href="#overview">Overview</a></li>
+          <li class="nav-dropdown">
+            <button
+              type="button"
+              class="nav-dropdown-toggle"
+              aria-expanded="false"
+              aria-controls="dropdown-parts"
+              aria-haspopup="true"
+              id="btn-dropdown-parts"
+            >
+              Parts
+              <span class="nav-dropdown-chevron" aria-hidden="true"></span>
+            </button>
+            <ul class="nav-dropdown-panel" id="dropdown-parts">
+              <li><a href="#parts">All spotlight cards</a></li>
+              <li>
+                <a href="graphics-cards.html" target="_blank" rel="noopener noreferrer">Graphics card</a>
+              </li>
+              <li><a href="#part-cpu">Processor</a></li>
+              <li><a href="#part-ram">Memory</a></li>
+              <li><a href="#part-storage">Storage</a></li>
+              <li><a href="#part-psu">Power supply</a></li>
+              <li><a href="#part-cooling">Cooling</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-plain"><a href="#build-first">Coming next</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" href="#parts">Explore parts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Section 2: Hero -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Gaming PC components</p>
+          <h1 id="hero-title">Pick the parts that define your FPS</h1>
+          <p class="hero-lead">
+            GPUs, CPUs, memory, cooling, and power — matched to how you actually play.
+            Built section by section, so nothing feels overwhelming.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#parts">Start with core parts</a>
+            <a class="btn btn-ghost" href="#overview">Overview of parts</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Highlighted components">
+          <div class="stat-card">
+            <span class="stat-label">Today's focus</span>
+            <span class="stat-value" data-count="6">6</span>
+            <span class="stat-hint">component families on this page</span>
+          </div>
+          <ul class="hero-mini-list">
+            <li><strong>GPU</strong> — frame times &amp; resolution</li>
+            <li><strong>CPU</strong> — 1% lows &amp; sim-heavy games</li>
+            <li><strong>RAM</strong> — speed, capacity, stability</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview: what each PC part does (nav link: Overview) -->
+    <section class="overview" id="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="overview-title">Overview — your gaming PC building blocks</h2>
+          <p class="section-sub">
+            A gaming computer is modular: parts plug into standardized slots and sockets. Below is how each category
+            affects load times, frame rate smoothness (including <em>1% lows</em>), thermals, and upgrade paths.
+          </p>
+        </header>
+
+        <div class="overview-intro" id="overview-compat">
+          <p>
+            <strong>Compatibility first.</strong> The CPU must match the motherboard socket (for example AMD AM5 vs Intel LGA 1700).
+            RAM sticks need the right DDR generation (DDR4 vs DDR5) and ideally run in matched pairs so dual-channel bandwidth works as intended.
+            Your graphics card draws the most instantaneous power spikes, so the PSU needs solid capacity and reliable 12&nbsp;V delivery — not only a wattage sticker.
+          </p>
+        </div>
+
+        <div class="overview-topics">
+          <article class="topic-card" id="overview-cpu">
+            <h3>CPU (processor)</h3>
+            <p>
+              Runs game logic, physics, and streaming/encoding when you multitask. High clock speed and newer architectures help minimum frame times,
+              especially in simulation-heavy titles and open worlds. Cooling and power limits affect how long “boost” speeds hold during long sessions.
+            </p>
+          </article>
+          <article class="topic-card" id="overview-gpu">
+            <h3>GPU (graphics card)</h3>
+            <p>
+              Drives pixels, shaders, ray tracing, and VRAM-heavy textures. Resolution and ultra settings scale VRAM usage; mismatches cause stuttering or crashes.
+              Match the GPU to your monitor refresh rate for the games you actually play — “max settings everywhere” isn’t required for competitive play.
+            </p>
+          </article>
+          <article class="topic-card" id="overview-motherboard">
+            <h3>Motherboard</h3>
+            <p>
+              Connects everything: CPU socket type, RAM slots, PCIe slots for the GPU and storage, onboard audio and networking,
+              headers for RGB and fans. Better VRM phases help CPUs sustain performance; Wi-Fi and extra M.2 slots are convenience tiers.
+            </p>
+          </article>
+          <article class="topic-card" id="overview-ram">
+            <h3>RAM (memory)</h3>
+            <p>
+              Short-term workspace for active game data — too little RAM forces hitching when the OS caches to disk.
+              Faster kits (MHz and timings) modestly uplift average and low FPS depending on CPU and titles; stability depends on motherboard QVL and EXPO/XMP tuning.
+            </p>
+          </article>
+          <article class="topic-card" id="overview-storage">
+            <h3>Storage (SSD/HDD)</h3>
+            <p>
+              NVMe SSDs shorten level loads and shader compilation pauses versus hard drives or slow SATA bundles.
+              For a gaming-focused build, dedicate space for OS and favorite games first; HDDs remain fine for backups and archives.
+            </p>
+          </article>
+          <article class="topic-card" id="overview-psu">
+            <h3>Power supply (PSU)</h3>
+            <p>
+              Converts wall power safely; quality matters beyond wattage ratings. Look for dependable reviews on ripple, protections, and sustained output.
+              Newer GPUs may need native 12VHPWR connectors or adapters — avoid daisy-chain shortcuts that stress plugs.
+            </p>
+          </article>
+          <article class="topic-card" id="overview-cooling">
+            <h3>Cooling &amp; airflow</h3>
+            <p>
+              Towers, radiator placement, intake vs exhaust paths, thermal paste coverage, case mesh panels — together they decide noise and throttle behavior.
+              Overheating trims boost clocks silently before you notice “temperature” alarms; airflow is quieter than brute-force fans.
+            </p>
+          </article>
+          <article class="topic-card" id="overview-case">
+            <h3>Case &amp; peripherals</h3>
+            <p>
+              The case organizes cable routing for airflow and cleanliness. Displays, keyboards, mice, headsets, and capture gear sit outside “core silicon” but round out immersion and reaction time.
+              Monitors tied to Adaptive Sync (<abbr title="NVIDIA technology">G-SYNC</abbr> / <abbr title="AMD FreeSync">FreeSync</abbr>) complement variable frame-rate gaming.
+            </p>
+          </article>
+        </div>
+
+        <p class="overview-foot">
+          Jump to the <a href="#parts">parts spotlight</a> for short summaries — or refine this overview into pages per component as you extend the site.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Parts grid (outline for your next edits) -->
+    <section class="parts" id="parts" aria-labelledby="parts-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="parts-title">Parts that matter most</h2>
+          <p class="section-sub">
+            Each card links to its future deep-dive section. For now it's a tidy map of what we'll build next.
+          </p>
+        </div>
+        <div class="parts-grid">
+          <a
+            href="graphics-cards.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="part-card-link"
+            id="part-gpu"
+            aria-label="Graphics cards — opens product examples in a new tab"
+          >
+            <article class="part-card">
+              <h3 class="part-card-title">Graphics card</h3>
+              <p class="part-card-desc">Ray tracing, VRAM sizing, refresh-rate targets.</p>
+              <span class="tag">Visual performance</span>
+            </article>
+          </a>
+          <article class="part-card" id="part-cpu">
+            <h3 class="part-card-title">Processor</h3>
+            <p class="part-card-desc">Cores vs clock; games that love cache and frequency.</p>
+            <span class="tag">Frame pacing</span>
+          </article>
+          <article class="part-card" id="part-ram">
+            <h3 class="part-card-title">Memory</h3>
+            <p class="part-card-desc">DDR5 kits, timings, dual-channel sanity checks.</p>
+            <span class="tag">Stutter reduction</span>
+          </article>
+          <article class="part-card" id="part-storage">
+            <h3 class="part-card-title">Storage</h3>
+            <p class="part-card-desc">NVMe loads, endurance, sensible capacity tiers.</p>
+            <span class="tag">Load times</span>
+          </article>
+          <article class="part-card" id="part-psu">
+            <h3 class="part-card-title">Power supply</h3>
+            <p class="part-card-desc">Efficiency tiers, transient spikes, connector clarity.</p>
+            <span class="tag">Stability</span>
+          </article>
+          <article class="part-card" id="part-cooling">
+            <h3 class="part-card-title">Cooling</h3>
+            <p class="part-card-desc">Case airflow vs AIO placement; quieter peak gaming.</p>
+            <span class="tag">Thermals</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder: your next section -->
+    <section class="future" id="build-first" aria-labelledby="future-title">
+      <div class="container narrow">
+        <h2 id="future-title">Next section we're building together</h2>
+        <p>
+          A good follow-up page block is either a <strong>“choose your GPU budget”</strong> comparison
+          or a <strong>step-by-step first build checklist</strong>. Say which direction you prefer and we'll implement it next.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>PixelForge — learning project (HTML, CSS &amp; JavaScript)</p>
+      <a class="footer-top" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
